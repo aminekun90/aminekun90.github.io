@@ -67,7 +67,7 @@ export const CLIENTS = [
 
 const STACK = {
   infogene: ["TypeScript", "NestJS", "React", "MongoDB", "RabbitMQ", "Temporal", "GraphQL", "GitLab CI", "Datadog"],
-  valeuriad: ["Python", "FastAPI", "SQLAlchemy", "Pytest", "RAG", "MCP", "Angular", "Kubernetes", "GCP", "Azure DevOps"],
+  valeuriad: ["Python", "FastAPI", "SQLAlchemy", "Pytest", "Java", "Quarkus", "RAG", "MCP", "Angular", "Kubernetes", "GCP", "Azure DevOps"],
   sncf: ["Python", "React", "Material UI", "Vite", "AWS Lambda", "PostgreSQL", "DynamoDB"],
   capgemini: ["AWS Lambda", "SNS / SQS / SES", "ArgoCD", "Grafana", "Okta SAML", "Symfony", "Akeneo PIM"],
   wiztivi: ["TypeScript", "JavaScript", "Python", "Grafana"],
@@ -81,7 +81,7 @@ const en: Content = {
     title: "Senior Full-Stack & AI Engineer",
     location: "Lille, France · open to relocate",
     summary:
-      "I build production backends and full-stack platforms in Python and TypeScript, and I run them on Kubernetes. Since 2024 I have led applied-AI delivery: RAG pipelines, MCP servers and agent tooling that moved internal assistants from prototypes to tools teams use every day.",
+      "I build production backends and full-stack platforms in Python, TypeScript and Java, and I run them on Kubernetes. Since 2024 I have led applied-AI delivery: RAG pipelines, MCP servers and agent tooling that moved internal assistants from prototypes to tools teams use every day.",
     cta: "Get in touch",
   },
   nav: { experience: "Experience", work: "Open source", skills: "Skills", about: "Background" },
@@ -257,7 +257,7 @@ const fr: Content = {
     title: "Ingénieur full-stack & IA senior",
     location: "Lille, France · ouvert à la mobilité",
     summary:
-      "Je construis des backends de production et des plateformes full-stack en Python et TypeScript, et je les fais tourner sur Kubernetes. Depuis 2024, je pilote la livraison d'IA appliquée : pipelines RAG, serveurs MCP et outillage d'agents qui ont fait passer des assistants internes du prototype à l'outil utilisé chaque jour.",
+      "Je construis des backends de production et des plateformes full-stack en Python, TypeScript et Java, et je les fais tourner sur Kubernetes. Depuis 2024, je pilote la livraison d'IA appliquée : pipelines RAG, serveurs MCP et outillage d'agents qui ont fait passer des assistants internes du prototype à l'outil utilisé chaque jour.",
     cta: "Me contacter",
   },
   nav: { experience: "Expérience", work: "Open source", skills: "Compétences", about: "Parcours" },
@@ -385,7 +385,7 @@ const nl: Content = {
     title: "Senior Full-Stack & AI Engineer",
     location: "Lille, Frankrijk · open voor verhuizing",
     summary:
-      "Ik bouw productiebackends en full-stackplatforms in Python en TypeScript, en draai ze op Kubernetes. Sinds 2024 leid ik de oplevering van toegepaste AI: RAG-pipelines, MCP-servers en agenttooling die interne assistenten van prototype tot dagelijks gebruikt hulpmiddel hebben gebracht.",
+      "Ik bouw productiebackends en full-stackplatforms in Python, TypeScript en Java, en draai ze op Kubernetes. Sinds 2024 leid ik de oplevering van toegepaste AI: RAG-pipelines, MCP-servers en agenttooling die interne assistenten van prototype tot dagelijks gebruikt hulpmiddel hebben gebracht.",
     cta: "Neem contact op",
   },
   nav: { experience: "Ervaring", work: "Open source", skills: "Vaardigheden", about: "Achtergrond" },
