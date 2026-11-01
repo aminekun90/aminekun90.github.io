@@ -37,16 +37,17 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 1rem/1.6 Inter, system-ui, sans-serif;
+  font: 400 1rem/1.6 "IBM Plex Sans", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
 h3 {
-  font-family: Fraunces, Georgia, serif;
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   margin: 0;
 }
 
@@ -77,6 +78,7 @@ ol {
 }
 
 .eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 600;
@@ -100,7 +102,7 @@ ol {
 }
 
 .brand {
-  font-family: Fraunces, Georgia, serif;
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
   text-decoration: none;
@@ -183,7 +185,9 @@ main {
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
   margin: 0.4rem 0 0.5rem;
 }
 
@@ -276,18 +280,18 @@ main {
 }
 
 .wordmark {
-  font-family: Fraunces, Georgia, serif;
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #14213d;
 }
 
 .period {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
   color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 500;
   margin: 0 0 0.2rem;
-  text-transform: capitalize;
 }
 
 .company {
@@ -311,6 +315,7 @@ main {
 }
 
 .tags li {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
   background: var(--tag);
   border-radius: 999rem;
   padding: 0.15rem 0.65rem;
