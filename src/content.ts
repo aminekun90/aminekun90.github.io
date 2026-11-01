@@ -50,7 +50,7 @@ export interface Content {
   teaching: string;
   contactTitle: string;
   contactText: string;
-  cv: { button: string; title: string; download: string; close: string };
+  cv: { button: string; title: string; download: string; close: string; loading: string; error: string; profile: string };
 }
 
 // First professional engagement; drives the "years of experience" figure.
@@ -253,7 +253,7 @@ const en: Content = {
   teaching: "Volunteer Java tutoring for students during the pandemic.",
   contactTitle: "Let's talk",
   contactText: "Open to senior engineering roles, on site or remote, and open to relocate.",
-  cv: { button: "Résumé (PDF)", title: "Résumé", download: "Download PDF", close: "Close" },
+  cv: { button: "Résumé (PDF)", title: "Résumé", download: "Download PDF", close: "Close", loading: "Generating the PDF…", error: "The PDF could not be generated. Please try again.", profile: "Profile" },
 };
 
 const fr: Content = {
@@ -382,7 +382,7 @@ const fr: Content = {
   teaching: "Tutorat Java bénévole pour des étudiants pendant la pandémie.",
   contactTitle: "Parlons-en",
   contactText: "Ouvert aux postes d'ingénieur senior, sur site ou à distance, et ouvert à la mobilité.",
-  cv: { button: "CV (PDF)", title: "CV — en anglais", download: "Télécharger le PDF", close: "Fermer" },
+  cv: { button: "CV (PDF)", title: "CV", download: "Télécharger le PDF", close: "Fermer", loading: "Génération du PDF…", error: "Le PDF n'a pas pu être généré. Réessayez.", profile: "Profil" },
 };
 
 const nl: Content = {
@@ -505,7 +505,7 @@ const nl: Content = {
   teaching: "Vrijwillige Java-bijles voor studenten tijdens de pandemie.",
   contactTitle: "Laten we praten",
   contactText: "Open voor senior engineeringrollen, op locatie of op afstand, en open voor verhuizing.",
-  cv: { button: "Cv (PDF)", title: "Cv — in het Engels", download: "PDF downloaden", close: "Sluiten" },
+  cv: { button: "Cv (PDF)", title: "Cv", download: "PDF downloaden", close: "Sluiten", loading: "PDF wordt gemaakt…", error: "De PDF kon niet worden gemaakt. Probeer het opnieuw.", profile: "Profiel" },
 };
 
 const de: Content = {
@@ -627,7 +627,7 @@ const de: Content = {
   teaching: "Ehrenamtliche Java-Nachhilfe für Studierende während der Pandemie.",
   contactTitle: "Sprechen wir",
   contactText: "Offen für Senior-Engineering-Rollen, vor Ort oder remote, und umzugsbereit.",
-  cv: { button: "Lebenslauf (PDF)", title: "Lebenslauf — auf Englisch", download: "PDF herunterladen", close: "Schließen" },
+  cv: { button: "Lebenslauf (PDF)", title: "Lebenslauf", download: "PDF herunterladen", close: "Schließen", loading: "PDF wird erstellt…", error: "Das PDF konnte nicht erstellt werden. Bitte erneut versuchen.", profile: "Profil" },
 };
 
 export const CONTENT: Record<Locale, Content> = { en, nl, de, fr };
