@@ -1,11 +1,12 @@
 import { useEffect, useState, type ReactElement } from "react";
 import portrait from "./assets/portrait.jpg";
-import { CAREER_START, CLIENTS, CONTENT, type Content, type Locale, type Role } from "./content";
+import { CAREER_START, CLIENTS, CONTENT, LOCALES, type Content, type Locale, type Role } from "./content";
 
 const EMAIL = "mohamed.amine.bouzahar@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/amine-bouzahar/";
 const GITHUB = "https://github.com/aminekun90";
 const LOCALE_KEY = "locale";
+const DATE_LOCALES: Record<Locale, string> = { en: "en-GB", nl: "nl-NL", fr: "fr-FR" };
 
 export function App(): ReactElement {
   const [locale, setLocale] = useState<Locale>(initialLocale);
@@ -32,9 +33,20 @@ export function App(): ReactElement {
           <a href="#skills">{content.nav.skills}</a>
           <a href="#background">{content.nav.about}</a>
         </nav>
-        <button className="locale" type="button" onClick={() => setLocale(locale === "en" ? "fr" : "en")}>
-          {content.meta.switchTo}
-        </button>
+        <div className="locales" role="group" aria-label="Language">
+          {LOCALES.map((option) => (
+            <button
+              key={option}
+              type="button"
+              lang={option}
+              title={CONTENT[option].meta.label}
+              aria-pressed={option === locale}
+              onClick={() => setLocale(option)}
+            >
+              {option.toUpperCase()}
+            </button>
+          ))}
+        </div>
       </header>
 
       <main id="top">
@@ -208,17 +220,22 @@ function Tags({ items }: { items: string[] }): ReactElement {
 }
 
 function initialLocale(): Locale {
+  // ?lang=nl lets a shared link open in the recipient's language.
+  const requested = new URLSearchParams(window.location.search).get("lang");
+  const fromUrl = LOCALES.find((option) => option === requested);
+  if (fromUrl) return fromUrl;
   try {
     const saved = localStorage.getItem(LOCALE_KEY);
-    if (saved === "en" || saved === "fr") return saved;
+    const known = LOCALES.find((option) => option === saved);
+    if (known) return known;
   } catch {
     // Fall through to the browser language.
   }
-  return navigator.language.startsWith("fr") ? "fr" : "en";
+  return LOCALES.find((option) => navigator.language.startsWith(option)) ?? "en";
 }
 
 function formatMonth(yearMonth: string, locale: Locale): string {
-  return new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-GB", { month: "short", year: "numeric" }).format(
+  return new Intl.DateTimeFormat(DATE_LOCALES[locale], { month: "short", year: "numeric" }).format(
     new Date(`${yearMonth}-01T12:00:00`),
   );
 }

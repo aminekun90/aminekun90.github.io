@@ -7,7 +7,8 @@ import ujm from "./assets/ujm.png";
 import valeuriad from "./assets/valeuriad.svg";
 import wiztivi from "./assets/wiztivi.png";
 
-export type Locale = "en" | "fr";
+export const LOCALES = ["en", "nl", "fr"] as const;
+export type Locale = (typeof LOCALES)[number];
 
 export interface Role {
   company: string;
@@ -28,7 +29,7 @@ export interface Project {
 }
 
 export interface Content {
-  meta: { switchTo: string; present: string; years: string };
+  meta: { label: string; present: string; years: string };
   hero: { title: string; location: string; summary: string; cta: string };
   nav: { experience: string; work: string; skills: string; about: string };
   clientsTitle: string;
@@ -75,7 +76,7 @@ const STACK = {
 };
 
 const en: Content = {
-  meta: { switchTo: "Français", present: "Present", years: "years" },
+  meta: { label: "English", present: "Present", years: "years" },
   hero: {
     title: "Senior Full-Stack & AI Engineer",
     location: "Lille, France · relocating to the Netherlands",
@@ -242,6 +243,7 @@ const en: Content = {
     { name: "Arabic", level: "Native" },
     { name: "Tamazight", level: "Native" },
     { name: "German", level: "A1" },
+    { name: "Dutch", level: "A0 · learning" },
   ],
   teachingTitle: "Teaching",
   teaching: "Volunteer Java tutoring for students during the pandemic.",
@@ -250,7 +252,7 @@ const en: Content = {
 };
 
 const fr: Content = {
-  meta: { switchTo: "English", present: "Aujourd'hui", years: "ans" },
+  meta: { label: "Français", present: "Aujourd'hui", years: "ans" },
   hero: {
     title: "Ingénieur full-stack & IA senior",
     location: "Lille, France · en cours d'installation aux Pays-Bas",
@@ -369,6 +371,7 @@ const fr: Content = {
     { name: "Arabe", level: "Natif" },
     { name: "Tamazight", level: "Natif" },
     { name: "Allemand", level: "A1" },
+    { name: "Néerlandais", level: "A0 · en apprentissage" },
   ],
   teachingTitle: "Enseignement",
   teaching: "Tutorat Java bénévole pour des étudiants pendant la pandémie.",
@@ -376,4 +379,126 @@ const fr: Content = {
   contactText: "Ouvert aux postes d'ingénieur senior aux Pays-Bas, sur site ou à distance.",
 };
 
-export const CONTENT: Record<Locale, Content> = { en, fr };
+const nl: Content = {
+  meta: { label: "Nederlands", present: "Heden", years: "jaar" },
+  hero: {
+    title: "Senior Full-Stack & AI Engineer",
+    location: "Lille, Frankrijk · verhuist naar Nederland",
+    summary:
+      "Ik bouw productiebackends en full-stackplatforms in Python en TypeScript, en draai ze op Kubernetes. Sinds 2024 leid ik de oplevering van toegepaste AI: RAG-pipelines, MCP-servers en agenttooling die interne assistenten van prototype tot dagelijks gebruikt hulpmiddel hebben gebracht.",
+    cta: "Neem contact op",
+  },
+  nav: { experience: "Ervaring", work: "Open source", skills: "Vaardigheden", about: "Achtergrond" },
+  clientsTitle: "Opdrachtgevers",
+  experienceTitle: "Ervaring",
+  roles: [
+    {
+      ...en.roles[0],
+      highlights: [
+        "Legacyservices herbouwd als RabbitMQ-gestuurde microservices, met Temporal voor langlopende processen: productdomeinen worden nu onafhankelijk uitgerold.",
+        "De MCP-servers en agentregels opgezet die het team dagelijks gebruikt, zodat elke pull request een automatische eerste review krijgt.",
+        "Een native macOS-controlecentrum en een headless JSON-CLI gebouwd op dezelfde beveiligde engine: ontwikkelaars en AI-agents bedienen de ontwikkelomgeving via identieke operaties.",
+        "De AI-toolingkosten van het team geanalyseerd en de kosten van lange onderzoeken gehalveerd door de manier van werken met sessies te veranderen.",
+      ],
+    },
+    {
+      ...en.roles[1],
+      highlights: [
+        "De Python- en AI-stroom van de interne platforms geleid en de eerste RAG-pipeline van het bedrijf gebouwd: de assistent antwoordt op basis van de eigen documenten van het bedrijf.",
+        "De FastAPI-services achter de AI-assistent opgeleverd en die van prototype naar bedrijfsbreed gebruik gebracht.",
+        "Interne projecten gemigreerd naar Kubernetes op GCP, met GitHub Actions- en Azure DevOps-pipelines en SonarQube-kwaliteitspoorten.",
+        "SAML 2.0- en Google-SSO geïmplementeerd en het team begeleid met kennisoverdrachtsessies.",
+      ],
+    },
+    {
+      ...en.roles[2],
+      context: "consultant via Valeuriad",
+      highlights: [
+        "Python-backends en AWS Lambda-microservices opgeleverd voor interne operationele tooling.",
+        "De React-interfaces gebouwd waarmee die teams dagelijks werken, plus de RobotFramework-suite die de handmatige regressietest overbodig maakte.",
+      ],
+    },
+    {
+      ...en.roles[3],
+      highlights: [
+        "AWS Lambda- en SNS/SQS/SES-pipelines gebouwd die notificaties en bestellingen asynchroon verwerken.",
+        "Deployments overgezet naar ArgoCD GitOps en Grafana-dashboards gebouwd die incidenten opvingen voordat klanten ze merkten.",
+        "Applicaties gekoppeld aan Okta SSO en de technische interviews gevoerd die bepaalden wie bij het team kwam.",
+      ],
+    },
+    {
+      ...en.roles[4],
+      highlights: [
+        "Set-top-boxinterfaces opgeleverd voor abonnees van Vodafone, Eutelsat en Telecentro, geoptimaliseerd voor beperkte hardware.",
+        "Python-tooling geschreven die detectie en debugging van set-top-boxen voor het hele team automatiseerde.",
+      ],
+    },
+    {
+      ...en.roles[5],
+      highlights: [
+        "De Flask REST-API's gebouwd achter een monitoringapplicatie voor de European Space Agency en voor Treemetrics.",
+        "TensorFlow-modellen getraind en vectorzoeken op Elasticsearch gebouwd, jaren voordat het kant-en-klaar beschikbaar was.",
+        "MQTT-ingestie van sensordata en een RabbitMQ-berichtenprototype ontworpen.",
+      ],
+    },
+    {
+      ...en.roles[6],
+      company: "Freelance",
+      title: "Webontwikkelaar & designer",
+      context: "Marokko",
+      highlights: [
+        "Webprojecten van begin tot eind voor onderwijsverenigingen en lokale bedrijven: analyse, datamodel, datamigratie, deployment en training.",
+      ],
+    },
+  ],
+  workTitle: "Open source & eigen projecten",
+  workIntro: "Wat ik naast klantwerk bouw en onderhoud, op infrastructuur die ik zelf beheer.",
+  projects: [
+    { ...en.projects[0], summary: "Zero-config mDNS / Zeroconf-discovery en publicatie van .local-hostnamen, inmiddels aan de vierde major versie." },
+    { ...en.projects[1], summary: "Eén notificatiebibliotheek in twee framework-native builds: zoneless-ready voor Angular, hook-gebaseerd voor React." },
+    { ...en.projects[2], summary: "Toolkit voor kleurbewerking en toegankelijkheid." },
+    {
+      ...en.projects[3],
+      name: "Gebedstijdenplatform",
+      summary:
+        "FastAPI- en PostgreSQL-backend met zelf geschreven zonnestandberekeningen, een React-client gegenereerd uit het OpenAPI-schema, uitgerold als Helm-chart op mijn eigen Kubernetes-cluster.",
+    },
+    {
+      ...en.projects[4],
+      name: "iOS- & watchOS-app",
+      summary: "Offline Qibla-kompas, gebedstijden en Koranlezer: iPhone-app, widgets en een Apple Watch-app, in Swift 6 en SwiftUI.",
+    },
+    { ...en.projects[5], summary: "Bibliotheek voor het renderen van plattegronden op canvas." },
+  ],
+  skillsTitle: "Vaardigheden",
+  skills: [
+    { label: "Backend", items: en.skills[0].items },
+    { label: "AI / LLM", items: "RAG-pipelines, vectorzoeken, MCP-servers, multi-agentworkflows met LangGraph, gehoste en zelf gehoste modellen" },
+    { label: "Frontend", items: en.skills[2].items },
+    { label: "Messaging", items: "RabbitMQ, Temporal, AWS SQS / SNS, MQTT, event-driven architecturen" },
+    { label: "Data", items: en.skills[4].items },
+    { label: "Beveiliging", items: en.skills[5].items },
+    { label: "DevOps", items: en.skills[6].items },
+    { label: "Werkwijze", items: "Hexagonale architectuur, domain-driven design, tests eerst, code review, mentoring" },
+  ],
+  educationTitle: "Opleiding",
+  education: [
+    { ...en.education[0], degree: "Master in Computer Engineering" },
+    { ...en.education[1], degree: "Bachelor Wiskunde & Informatica" },
+  ],
+  languagesTitle: "Talen",
+  languages: [
+    { name: "Frans", level: "Moedertaal" },
+    { name: "Engels", level: "C2" },
+    { name: "Arabisch", level: "Moedertaal" },
+    { name: "Tamazight", level: "Moedertaal" },
+    { name: "Duits", level: "A1" },
+    { name: "Nederlands", level: "A0 · aan het leren" },
+  ],
+  teachingTitle: "Lesgeven",
+  teaching: "Vrijwillige Java-bijles voor studenten tijdens de pandemie.",
+  contactTitle: "Laten we praten",
+  contactText: "Open voor senior engineeringrollen in Nederland, op locatie of op afstand.",
+};
+
+export const CONTENT: Record<Locale, Content> = { en, nl, fr };
