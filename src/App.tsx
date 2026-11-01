@@ -1,10 +1,11 @@
-import { useEffect, useState, type ReactElement } from "react";
+import { useEffect, useRef, useState, type ReactElement } from "react";
 import portrait from "./assets/portrait.jpg";
 import { CAREER_START, CLIENTS, CONTENT, LOCALES, type Content, type Locale, type Role } from "./content";
 
 const EMAIL = "mohamed.amine.bouzahar@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/amine-bouzahar/";
 const GITHUB = "https://github.com/aminekun90";
+const CV_PDF = "/cv/Mohamed-Amine-Bouzahar-CV.pdf";
 const LOCALE_KEY = "locale";
 const DATE_LOCALES: Record<Locale, string> = { en: "en-GB", nl: "nl-NL", de: "de-DE", fr: "fr-FR" };
 
@@ -127,7 +128,7 @@ export function App(): ReactElement {
         <section id="contact" className="section contact">
           <h2>{content.contactTitle}</h2>
           <p className="lead">{content.contactText}</p>
-          <ContactLinks />
+          <ContactLinks cv={content.cv} />
         </section>
       </main>
 
@@ -150,7 +151,7 @@ function Hero({ content }: { content: Content }): ReactElement {
           {content.hero.title} · {years} {content.meta.years}
         </p>
         <p className="summary">{content.hero.summary}</p>
-        <ContactLinks cta={content.hero.cta} />
+        <ContactLinks cta={content.hero.cta} cv={content.cv} />
       </div>
     </section>
   );
@@ -193,12 +194,13 @@ function RoleItem({ role, locale, present }: { role: Role; locale: Locale; prese
   );
 }
 
-function ContactLinks({ cta }: { cta?: string }): ReactElement {
+function ContactLinks({ cta, cv }: { cta?: string; cv: Content["cv"] }): ReactElement {
   return (
     <div className="links">
       <a className="button primary" href={`mailto:${EMAIL}`}>
         {cta ?? EMAIL}
       </a>
+      <CvPreview labels={cv} />
       <a className="button" href={LINKEDIN}>
         LinkedIn
       </a>
@@ -206,6 +208,37 @@ function ContactLinks({ cta }: { cta?: string }): ReactElement {
         GitHub
       </a>
     </div>
+  );
+}
+
+function CvPreview({ labels }: { labels: Content["cv"] }): ReactElement {
+  const dialog = useRef<HTMLDialogElement>(null);
+  // The iframe only mounts while open, so the PDF is fetched on demand.
+  const [open, setOpen] = useState(false);
+
+  const show = (): void => {
+    setOpen(true);
+    dialog.current?.showModal();
+  };
+
+  return (
+    <>
+      <button className="button" type="button" onClick={show}>
+        {labels.button}
+      </button>
+      <dialog ref={dialog} className="cv-dialog" onClose={() => setOpen(false)}>
+        <header>
+          <strong>{labels.title}</strong>
+          <a className="button primary" href={CV_PDF} download>
+            {labels.download}
+          </a>
+          <button className="button" type="button" onClick={() => dialog.current?.close()}>
+            {labels.close}
+          </button>
+        </header>
+        {open && <iframe src={`${CV_PDF}#view=FitH`} title={labels.title} />}
+      </dialog>
+    </>
   );
 }
 

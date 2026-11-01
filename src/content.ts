@@ -50,6 +50,7 @@ export interface Content {
   teaching: string;
   contactTitle: string;
   contactText: string;
+  cv: { button: string; title: string; download: string; close: string };
 }
 
 // First professional engagement; drives the "years of experience" figure.
@@ -252,6 +253,7 @@ const en: Content = {
   teaching: "Volunteer Java tutoring for students during the pandemic.",
   contactTitle: "Let's talk",
   contactText: "Open to senior engineering roles, on site or remote, and open to relocate.",
+  cv: { button: "Résumé (PDF)", title: "Résumé", download: "Download PDF", close: "Close" },
 };
 
 const fr: Content = {
@@ -380,6 +382,7 @@ const fr: Content = {
   teaching: "Tutorat Java bénévole pour des étudiants pendant la pandémie.",
   contactTitle: "Parlons-en",
   contactText: "Ouvert aux postes d'ingénieur senior, sur site ou à distance, et ouvert à la mobilité.",
+  cv: { button: "CV (PDF)", title: "CV — en anglais", download: "Télécharger le PDF", close: "Fermer" },
 };
 
 const nl: Content = {
@@ -502,6 +505,7 @@ const nl: Content = {
   teaching: "Vrijwillige Java-bijles voor studenten tijdens de pandemie.",
   contactTitle: "Laten we praten",
   contactText: "Open voor senior engineeringrollen, op locatie of op afstand, en open voor verhuizing.",
+  cv: { button: "Cv (PDF)", title: "Cv — in het Engels", download: "PDF downloaden", close: "Sluiten" },
 };
 
 const de: Content = {
@@ -623,6 +627,7 @@ const de: Content = {
   teaching: "Ehrenamtliche Java-Nachhilfe für Studierende während der Pandemie.",
   contactTitle: "Sprechen wir",
   contactText: "Offen für Senior-Engineering-Rollen, vor Ort oder remote, und umzugsbereit.",
+  cv: { button: "Lebenslauf (PDF)", title: "Lebenslauf — auf Englisch", download: "PDF herunterladen", close: "Schließen" },
 };
 
 export const CONTENT: Record<Locale, Content> = { en, nl, de, fr };
