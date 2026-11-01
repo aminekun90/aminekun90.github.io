@@ -7,7 +7,7 @@ import ujm from "./assets/ujm.png";
 import valeuriad from "./assets/valeuriad.svg";
 import wiztivi from "./assets/wiztivi.png";
 
-export const LOCALES = ["en", "nl", "fr"] as const;
+export const LOCALES = ["en", "nl", "de", "fr"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export interface Role {
@@ -504,4 +504,125 @@ const nl: Content = {
   contactText: "Open voor senior engineeringrollen, op locatie of op afstand, en open voor verhuizing.",
 };
 
-export const CONTENT: Record<Locale, Content> = { en, nl, fr };
+const de: Content = {
+  meta: { label: "Deutsch", present: "Heute", years: "Jahre" },
+  hero: {
+    title: "Senior Full-Stack & AI Engineer",
+    location: "Lille, Frankreich · umzugsbereit",
+    summary:
+      "Ich entwickle Produktions-Backends und Full-Stack-Plattformen in Python, TypeScript und Java und betreibe sie auf Kubernetes. Seit 2024 leite ich die Umsetzung angewandter KI: RAG-Pipelines, MCP-Server und Agenten-Tooling, die interne Assistenten vom Prototyp zum täglich genutzten Werkzeug gemacht haben.",
+    cta: "Kontakt aufnehmen",
+  },
+  nav: { experience: "Erfahrung", work: "Open Source", skills: "Kenntnisse", about: "Werdegang" },
+  clientsTitle: "Projekte für",
+  experienceTitle: "Berufserfahrung",
+  roles: [
+    {
+      ...en.roles[0],
+      highlights: [
+        "Altsysteme als RabbitMQ-gesteuerte Microservices neu aufgebaut, mit Temporal für langlaufende Abläufe: Produktdomänen werden jetzt unabhängig ausgeliefert.",
+        "Die MCP-Server und Agentenregeln eingeführt, die das Team täglich nutzt, sodass jeder Pull Request ein automatisches erstes Review erhält.",
+        "Ein natives macOS-Kontrollzentrum und eine Headless-JSON-CLI auf derselben abgesicherten Engine gebaut: Entwickler und KI-Agenten steuern die Entwicklungsumgebung über identische Operationen.",
+        "Die KI-Tooling-Kosten des Teams analysiert und die Kosten langer Untersuchungen durch eine andere Sitzungsführung halbiert.",
+      ],
+    },
+    {
+      ...en.roles[1],
+      highlights: [
+        "Den Python- und KI-Bereich der internen Plattformen geleitet und die erste RAG-Pipeline des Unternehmens gebaut: Der Assistent antwortet aus den eigenen Dokumenten des Unternehmens.",
+        "Die FastAPI-Services hinter dem KI-Assistenten ausgeliefert und ihn vom Prototyp zum unternehmensweiten Einsatz gebracht.",
+        "Interne Projekte auf Kubernetes in GCP migriert, mit GitHub-Actions- und Azure-DevOps-Pipelines und SonarQube-Quality-Gates.",
+        "SAML-2.0- und Google-SSO umgesetzt und das Team in Wissenstransfer-Sessions begleitet.",
+      ],
+    },
+    {
+      ...en.roles[2],
+      context: "Berater über Valeuriad",
+      highlights: [
+        "Python-Backends und AWS-Lambda-Microservices für interne Betriebswerkzeuge ausgeliefert.",
+        "Die React-Oberflächen gebaut, mit denen diese Teams täglich arbeiten, sowie die RobotFramework-Suite, die den manuellen Regressionstest ersetzt hat.",
+      ],
+    },
+    {
+      ...en.roles[3],
+      highlights: [
+        "AWS-Lambda- und SNS/SQS/SES-Pipelines gebaut, die Benachrichtigungen und Bestellungen asynchron verarbeiten.",
+        "Deployments auf ArgoCD-GitOps umgestellt und Grafana-Dashboards gebaut, die Vorfälle erkannten, bevor Kunden sie bemerkten.",
+        "Anwendungen an Okta-SSO angebunden und die technischen Interviews geführt, die über neue Teammitglieder entschieden.",
+      ],
+    },
+    {
+      ...en.roles[4],
+      highlights: [
+        "Set-Top-Box-Oberflächen für Abonnenten von Vodafone, Eutelsat und Telecentro ausgeliefert, optimiert für eingeschränkte Hardware.",
+        "Python-Tooling geschrieben, das Erkennung und Debugging von Set-Top-Boxen für das ganze Team automatisiert hat.",
+      ],
+    },
+    {
+      ...en.roles[5],
+      highlights: [
+        "Die Flask-REST-APIs hinter einer Überwachungsanwendung für die Europäische Weltraumorganisation und für Treemetrics gebaut.",
+        "TensorFlow-Modelle trainiert und eine Vektorsuche auf Elasticsearch gebaut, Jahre bevor es so etwas fertig zu kaufen gab.",
+        "MQTT-Erfassung von Sensordaten und einen RabbitMQ-Messaging-Prototyp entworfen.",
+      ],
+    },
+    {
+      ...en.roles[6],
+      title: "Webentwickler & Designer",
+      context: "Marokko",
+      highlights: [
+        "Webprojekte von Anfang bis Ende für Bildungsvereine und lokale Unternehmen: Anforderungen, Datenmodell, Datenmigration, Deployment und Schulung.",
+      ],
+    },
+  ],
+  workTitle: "Open Source & eigene Projekte",
+  workIntro: "Was ich neben Kundenprojekten baue und pflege, auf Infrastruktur, die ich selbst betreibe.",
+  projects: [
+    { ...en.projects[0], summary: "Konfigurationsfreie mDNS-/Zeroconf-Erkennung und Veröffentlichung von .local-Hostnamen, inzwischen in der vierten Hauptversion." },
+    { ...en.projects[1], summary: "Eine Benachrichtigungsbibliothek in zwei frameworknativen Builds: zoneless-ready für Angular, hook-basiert für React." },
+    { ...en.projects[2], summary: "Toolkit für Farbmanipulation und Barrierefreiheit." },
+    {
+      ...en.projects[3],
+      name: "Gebetszeiten-Plattform",
+      summary:
+        "FastAPI- und PostgreSQL-Backend mit selbst implementierter Sonnenstandsberechnung, ein aus dem OpenAPI-Schema generierter React-Client, ausgeliefert als Helm-Chart auf meinem eigenen Kubernetes-Cluster.",
+    },
+    {
+      ...en.projects[4],
+      name: "iOS- & watchOS-App",
+      summary: "Offline-Qibla-Kompass, Gebetszeiten und Koran-Reader: iPhone-App, Widgets und eine Apple-Watch-App, in Swift 6 und SwiftUI.",
+    },
+    { ...en.projects[5], summary: "Bibliothek zum Rendern von Grundrissen auf Canvas." },
+  ],
+  skillsTitle: "Kenntnisse",
+  skills: [
+    { label: "Backend", items: en.skills[0].items },
+    { label: "KI / LLM", items: "RAG-Pipelines, Vektorsuche, MCP-Server, Multi-Agenten-Workflows mit LangGraph, gehostete und selbst betriebene Modelle" },
+    { label: "Frontend", items: en.skills[2].items },
+    { label: "Messaging", items: "RabbitMQ, Temporal, AWS SQS / SNS, MQTT, ereignisgesteuerte Architekturen" },
+    { label: "Daten", items: en.skills[4].items },
+    { label: "Sicherheit", items: en.skills[5].items },
+    { label: "DevOps", items: en.skills[6].items },
+    { label: "Arbeitsweise", items: "Hexagonale Architektur, Domain-Driven Design, Tests zuerst, Code-Reviews, Mentoring" },
+  ],
+  educationTitle: "Ausbildung",
+  education: [
+    { ...en.education[0], degree: "Master in Informatik-Ingenieurwesen" },
+    { ...en.education[1], degree: "Bachelor in Mathematik & Informatik" },
+  ],
+  languagesTitle: "Sprachen",
+  languages: [
+    { name: "Französisch", level: "Muttersprache" },
+    { name: "Englisch", level: "C2" },
+    { name: "Arabisch", level: "Muttersprache" },
+    { name: "Tamazight", level: "Muttersprache" },
+    { name: "Deutsch", level: "A1" },
+    { name: "Niederländisch", level: "A0 · am Lernen" },
+  ],
+  teachingTitle: "Lehre",
+  teaching: "Ehrenamtliche Java-Nachhilfe für Studierende während der Pandemie.",
+  contactTitle: "Sprechen wir",
+  contactText: "Offen für Senior-Engineering-Rollen, vor Ort oder remote, und umzugsbereit.",
+};
+
+export const CONTENT: Record<Locale, Content> = { en, nl, de, fr };
