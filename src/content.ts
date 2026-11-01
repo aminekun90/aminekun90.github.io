@@ -79,7 +79,7 @@ const en: Content = {
   meta: { label: "English", present: "Present", years: "years" },
   hero: {
     title: "Senior Full-Stack & AI Engineer",
-    location: "Lille, France · relocating to the Netherlands",
+    location: "Lille, France · open to relocation",
     summary:
       "I build production backends and full-stack platforms in Python and TypeScript, and I run them on Kubernetes. Since 2024 I have led applied-AI delivery: RAG pipelines, MCP servers and agent tooling that moved internal assistants from prototypes to tools teams use every day.",
     cta: "Get in touch",
@@ -255,7 +255,7 @@ const fr: Content = {
   meta: { label: "Français", present: "Aujourd'hui", years: "ans" },
   hero: {
     title: "Ingénieur full-stack & IA senior",
-    location: "Lille, France · en cours d'installation aux Pays-Bas",
+    location: "Lille, France · ouvert à la mobilité",
     summary:
       "Je construis des backends de production et des plateformes full-stack en Python et TypeScript, et je les fais tourner sur Kubernetes. Depuis 2024, je pilote la livraison d'IA appliquée : pipelines RAG, serveurs MCP et outillage d'agents qui ont fait passer des assistants internes du prototype à l'outil utilisé chaque jour.",
     cta: "Me contacter",
@@ -383,7 +383,7 @@ const nl: Content = {
   meta: { label: "Nederlands", present: "Heden", years: "jaar" },
   hero: {
     title: "Senior Full-Stack & AI Engineer",
-    location: "Lille, Frankrijk · verhuist naar Nederland",
+    location: "Lille, Frankrijk · open voor verhuizing",
     summary:
       "Ik bouw productiebackends en full-stackplatforms in Python en TypeScript, en draai ze op Kubernetes. Sinds 2024 leid ik de oplevering van toegepaste AI: RAG-pipelines, MCP-servers en agenttooling die interne assistenten van prototype tot dagelijks gebruikt hulpmiddel hebben gebracht.",
     cta: "Neem contact op",
