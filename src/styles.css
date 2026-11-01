@@ -122,15 +122,29 @@ ol {
   color: var(--ink);
 }
 
-.locale {
-  font: inherit;
-  font-size: 0.85rem;
-  color: var(--ink);
-  background: none;
+.locales {
+  display: flex;
   border: 0.0625rem solid var(--line);
   border-radius: 999rem;
-  padding: 0.3rem 0.9rem;
+  padding: 0.15rem;
+}
+
+.locales button {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 999rem;
+  padding: 0.25rem 0.7rem;
   cursor: pointer;
+}
+
+.locales button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--bg);
 }
 
 /* Layout */

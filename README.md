@@ -2,7 +2,7 @@
 
 Personal site of Mohamed Amine Bouzahar — https://aminekun90.github.io
 
-Vite, React 19 and TypeScript. Content in English and French lives in `src/content.ts`.
+Vite, React 19 and TypeScript. Content in English, Dutch and French lives in `src/content.ts`.
 
 ```bash
 npm install
