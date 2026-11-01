@@ -79,7 +79,7 @@ const en: Content = {
   meta: { label: "English", present: "Present", years: "years" },
   hero: {
     title: "Senior Full-Stack & AI Engineer",
-    location: "Lille, France · open to relocation",
+    location: "Lille, France · open to relocate",
     summary:
       "I build production backends and full-stack platforms in Python and TypeScript, and I run them on Kubernetes. Since 2024 I have led applied-AI delivery: RAG pipelines, MCP servers and agent tooling that moved internal assistants from prototypes to tools teams use every day.",
     cta: "Get in touch",
@@ -248,7 +248,7 @@ const en: Content = {
   teachingTitle: "Teaching",
   teaching: "Volunteer Java tutoring for students during the pandemic.",
   contactTitle: "Let's talk",
-  contactText: "Open to senior engineering roles in the Netherlands, on site or remote.",
+  contactText: "Open to senior engineering roles, on site or remote, and open to relocate.",
 };
 
 const fr: Content = {
@@ -376,7 +376,7 @@ const fr: Content = {
   teachingTitle: "Enseignement",
   teaching: "Tutorat Java bénévole pour des étudiants pendant la pandémie.",
   contactTitle: "Parlons-en",
-  contactText: "Ouvert aux postes d'ingénieur senior aux Pays-Bas, sur site ou à distance.",
+  contactText: "Ouvert aux postes d'ingénieur senior, sur site ou à distance, et ouvert à la mobilité.",
 };
 
 const nl: Content = {
@@ -498,7 +498,7 @@ const nl: Content = {
   teachingTitle: "Lesgeven",
   teaching: "Vrijwillige Java-bijles voor studenten tijdens de pandemie.",
   contactTitle: "Laten we praten",
-  contactText: "Open voor senior engineeringrollen in Nederland, op locatie of op afstand.",
+  contactText: "Open voor senior engineeringrollen, op locatie of op afstand, en open voor verhuizing.",
 };
 
 export const CONTENT: Record<Locale, Content> = { en, nl, fr };
