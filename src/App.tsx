@@ -6,7 +6,7 @@ const EMAIL = "mohamed.amine.bouzahar@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/amine-bouzahar/";
 const GITHUB = "https://github.com/aminekun90";
 const LOCALE_KEY = "locale";
-const DATE_LOCALES: Record<Locale, string> = { en: "en-GB", nl: "nl-NL", fr: "fr-FR" };
+const DATE_LOCALES: Record<Locale, string> = { en: "en-GB", nl: "nl-NL", de: "de-DE", fr: "fr-FR" };
 
 export function App(): ReactElement {
   const [locale, setLocale] = useState<Locale>(initialLocale);
