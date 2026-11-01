@@ -13,6 +13,8 @@ export type Locale = (typeof LOCALES)[number];
 export interface Role {
   company: string;
   logo?: string;
+  // The official logo has a white wordmark, so it needs a dark tile.
+  darkLogo?: boolean;
   title: string;
   context?: string;
   start: string;
@@ -158,6 +160,7 @@ const en: Content = {
     {
       company: "Tisalabs",
       logo: tisalabs,
+      darkLogo: true,
       title: "Full-Stack & IoT Engineer",
       start: "2017-07",
       end: "2018-12",
@@ -321,7 +324,7 @@ const fr: Content = {
     },
     {
       ...en.roles[6],
-      company: "Indépendant",
+      company: "Freelance",
       title: "Développeur web & designer",
       context: "Maroc",
       highlights: [

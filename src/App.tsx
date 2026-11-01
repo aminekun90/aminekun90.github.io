@@ -172,7 +172,7 @@ function Clients({ title }: { title: string }): ReactElement {
 function RoleItem({ role, locale, present }: { role: Role; locale: Locale; present: string }): ReactElement {
   return (
     <li className="role-item">
-      <span className="logo">{role.logo ? <img src={role.logo} alt="" /> : <span className="initial">{role.company[0]}</span>}</span>
+      <span className={role.darkLogo ? "logo dark" : "logo"}>{role.logo ? <img src={role.logo} alt="" /> : <span className="wordmark">{role.company}</span>}</span>
       <div>
         <p className="period">
           {formatMonth(role.start, locale)} — {role.end ? formatMonth(role.end, locale) : present}
