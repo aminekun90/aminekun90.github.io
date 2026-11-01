@@ -84,7 +84,7 @@ const en: Content = {
     title: "Senior Full-Stack & AI Engineer",
     location: "Lille, France · open to relocate",
     summary:
-      "I build production backends and full-stack platforms in Python, TypeScript and Java, and I run them on Kubernetes. Since 2024 I have led applied-AI delivery: RAG pipelines, MCP servers and agent tooling that moved internal assistants from prototypes to tools teams use every day.",
+      "I build production backends and full-stack platforms in Python, TypeScript and Java, and I run them on Kubernetes. Since 2024 I have led applied-AI delivery: RAG pipelines, MCP servers and agent tooling that moved internal assistants from prototypes to tools teams use every day. I also maintain four npm packages in TypeScript, around 1.9 million downloads in the last twelve months.",
     cta: "Get in touch",
   },
   nav: { experience: "Experience", work: "Open source", skills: "Skills", about: "Background" },
@@ -262,7 +262,7 @@ const fr: Content = {
     title: "Ingénieur full-stack & IA senior",
     location: "Lille, France · ouvert à la mobilité",
     summary:
-      "Je construis des backends de production et des plateformes full-stack en Python, TypeScript et Java, et je les fais tourner sur Kubernetes. Depuis 2024, je pilote la livraison d'IA appliquée : pipelines RAG, serveurs MCP et outillage d'agents qui ont fait passer des assistants internes du prototype à l'outil utilisé chaque jour.",
+      "Je construis des backends de production et des plateformes full-stack en Python, TypeScript et Java, et je les fais tourner sur Kubernetes. Depuis 2024, je pilote la livraison d'IA appliquée : pipelines RAG, serveurs MCP et outillage d'agents qui ont fait passer des assistants internes du prototype à l'outil utilisé chaque jour. Je maintiens aussi quatre bibliothèques npm en TypeScript, environ 1,9 million de téléchargements sur les douze derniers mois.",
     cta: "Me contacter",
   },
   nav: { experience: "Expérience", work: "Open source", skills: "Compétences", about: "Parcours" },
@@ -391,7 +391,7 @@ const nl: Content = {
     title: "Senior Full-Stack & AI Engineer",
     location: "Lille, Frankrijk · open voor verhuizing",
     summary:
-      "Ik bouw productiebackends en full-stackplatforms in Python, TypeScript en Java, en draai ze op Kubernetes. Sinds 2024 leid ik de oplevering van toegepaste AI: RAG-pipelines, MCP-servers en agenttooling die interne assistenten van prototype tot dagelijks gebruikt hulpmiddel hebben gebracht.",
+      "Ik bouw productiebackends en full-stackplatforms in Python, TypeScript en Java, en draai ze op Kubernetes. Sinds 2024 leid ik de oplevering van toegepaste AI: RAG-pipelines, MCP-servers en agenttooling die interne assistenten van prototype tot dagelijks gebruikt hulpmiddel hebben gebracht. Daarnaast onderhoud ik vier npm-pakketten in TypeScript, met zo'n 1,9 miljoen downloads in de afgelopen twaalf maanden.",
     cta: "Neem contact op",
   },
   nav: { experience: "Ervaring", work: "Open source", skills: "Vaardigheden", about: "Achtergrond" },
@@ -514,7 +514,7 @@ const de: Content = {
     title: "Senior Full-Stack & AI Engineer",
     location: "Lille, Frankreich · umzugsbereit",
     summary:
-      "Ich entwickle Produktions-Backends und Full-Stack-Plattformen in Python, TypeScript und Java und betreibe sie auf Kubernetes. Seit 2024 leite ich die Umsetzung angewandter KI: RAG-Pipelines, MCP-Server und Agenten-Tooling, die interne Assistenten vom Prototyp zum täglich genutzten Werkzeug gemacht haben.",
+      "Ich entwickle Produktions-Backends und Full-Stack-Plattformen in Python, TypeScript und Java und betreibe sie auf Kubernetes. Seit 2024 leite ich die Umsetzung angewandter KI: RAG-Pipelines, MCP-Server und Agenten-Tooling, die interne Assistenten vom Prototyp zum täglich genutzten Werkzeug gemacht haben. Außerdem pflege ich vier npm-Pakete in TypeScript mit rund 1,9 Millionen Downloads in den letzten zwölf Monaten.",
     cta: "Kontakt aufnehmen",
   },
   nav: { experience: "Erfahrung", work: "Open Source", skills: "Kenntnisse", about: "Werdegang" },
